@@ -1,5 +1,6 @@
 const _ = require('lodash');
 const { Product, validate } = require('../models/product');
+const { Review } = require('../models/review');
 const formidable = require('formidable');
 const fs = require('fs');
 
@@ -146,4 +147,15 @@ module.exports.filterProducts = async (req, res) => {
         .limit(limit)
 
     return res.status(200).send(products);
+}
+
+module.exports.createReview = async (req, res) => {
+    let rev = {};
+    rev = _.pick(req.body, ['name', 'review']);
+    rev.id = req.params.id;
+
+    const review = new Review(rev);
+
+    const result = await review.save();
+    return res.status(201).send(result);
 }
