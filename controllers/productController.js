@@ -155,6 +155,7 @@ module.exports.createReview = async (req, res) => {
     rev.id = req.params.id;
 
     const review = new Review(_.pick(rev, ['name', 'review', 'id']));
+    console.log(review);
 
     const result = await review.save();
     return res.status(201).send(result);
