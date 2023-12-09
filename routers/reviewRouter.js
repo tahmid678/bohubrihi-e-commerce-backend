@@ -4,6 +4,6 @@ const admin = require('../middlewares/admin');
 const authorize = require('../middlewares/authorize');
 
 router.route('/')
-    .post(authorize, createReview);
+    .post(createReview);
 
 module.exports = router;
