@@ -17,6 +17,7 @@ module.exports.createReview = async (req, res) => {
 
 module.exports.getReviews = async (req, res) => {
     let id = req.params.id;
+    console.log(id);
 
     const reviews = await Review.find({ _id: id });
 
