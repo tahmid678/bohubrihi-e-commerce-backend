@@ -14,3 +14,11 @@ module.exports.createReview = async (req, res) => {
     const result = await review.save();
     return res.status(201).send(result);
 }
+
+module.exports.getReviews = async (req, res) => {
+    let id = req.params.id;
+
+    const reviews = await Review.find({ _id: id });
+
+    res.status(200).send(reviews);
+}
