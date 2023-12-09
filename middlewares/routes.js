@@ -6,6 +6,7 @@ const profileRouter = require('../routers/profileRouter');
 const paymentRouter = require('../routers/paymentRouter');
 const authGoogleRouter = require('../routers/authGoogleRouter');
 const allProductRouter = require('../routers/allProductRouter');
+const reviewRouter = require('../routers/reviewRouter');
 
 
 module.exports = (app) => {
@@ -17,5 +18,6 @@ module.exports = (app) => {
     app.use('/api/payment', paymentRouter);
     app.use('/auth/google', authGoogleRouter);
     app.use('/api/allProduct', allProductRouter);
+    app.use('/api/review', reviewRouter);
 
 }

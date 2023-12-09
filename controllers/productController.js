@@ -149,18 +149,6 @@ module.exports.filterProducts = async (req, res) => {
     return res.status(200).send(products);
 }
 
-module.exports.createReview = async (req, res) => {
-    let rev = {};
-    rev = _.pick(req.body, ['name', 'review']);
-    rev.id = req.params.id;
-
-    const review = new Review(_.pick(rev, ['name', 'review', 'id']));
-    console.log(review);
-
-    const result = await review.save();
-    return res.status(201).send(result);
-}
-
 module.exports.getAllProducts = async (req, res) => {
     const products = await Product.find();
     res.status(200).send(products);
