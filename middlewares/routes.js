@@ -5,6 +5,7 @@ const cartRouter = require('../routers/cartRouter');
 const profileRouter = require('../routers/profileRouter');
 const paymentRouter = require('../routers/paymentRouter');
 const authGoogleRouter = require('../routers/authGoogleRouter');
+const allProductRouter = require('../routers/allProductRouter');
 
 
 module.exports = (app) => {
@@ -15,4 +16,6 @@ module.exports = (app) => {
     app.use('/api/profile', profileRouter);
     app.use('/api/payment', paymentRouter);
     app.use('/auth/google', authGoogleRouter);
+    app.use('/api/allProduct', allProductRouter);
+
 }
